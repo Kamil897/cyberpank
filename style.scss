@@ -211,6 +211,7 @@ body {
 }
 
 .form{
+  padding: 20px 0 70px 0;
   min-height: 100vh;
   background-color: var(--primary-text-color);
   position: relative;
@@ -218,6 +219,8 @@ body {
   &::before{
     content: "";
     display: block;
+    position: absolute;
+    top: -70px;
     min-height: 70px;
     width: 100%;
     background-image: url(image/form-top.png);
@@ -226,6 +229,8 @@ body {
   &::after{
     content: "";
     display: block;
+    position: absolute;
+    bottom: -70px;
     min-height: 70px;
     width: 100%;
     background-image: url(image/form-bottom.png);
@@ -233,10 +238,32 @@ body {
   &__head{
     margin-bottom: 25px;
     max-width: 70%;
+    @media (max-width: 1080px){
+        width: 50%;
+    }
+    @media (max-width: 980px){
+      width: 100%;
+      max-width: max-content;
+      margin-top: 250px;
+  }
     & span{
       display: flex;
       align-items: center;
       gap: 32px;
+    & img{
+      @media (max-width: 1080px){
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 62px;
+        height: 62px;
+      }
+    }
+      @media (max-width: 1080px){
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
 
     & h3{
@@ -267,25 +294,56 @@ body {
 .form-images{
   display: flex;
   align-items: center;
-
+  @media (max-width: 1380px){
+    flex-direction: column;
+    gap: 50px;
+    position: absolute;
+    right: 0;
+    top: 10%;
+    max-width:  450px;
+    width: 100%;
+  }
+  @media (max-width: 980px){
+      flex-direction: row;
+      justify-content: space-between;
+      left: 0;
+      width: 100%;
+  }
   & img{
     object-fit: cover;
     width: 450px;
     height: 450px;
+    @media (max-width: 1380px){
+      max-width: 300px;
+      height: auto;
+      width: 100%;
+    }
+    @media (max-width: 980px){
+      max-width: 150px;
+    }
     &:nth-of-type(1){
       margin-right: -100px;
       z-index: 1;
+      @media (max-width: 1080px){
+          margin-right: 0;
+      }
     }
   }
 }
 form{
   width: 100%;
-  min-width: 300px;
+  max-width: 450px;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   gap: 35px;
-
+  @media (max-width: 1080px){
+    width: 50%;
+  }
+  @media (max-width: 980px){
+    width: 100%;
+    max-width: 100%;
+  }
   & input{
     background-color: inherit;
     padding: 0 13px;
@@ -395,8 +453,78 @@ input:checked + .checkbox::after{
   content: "";
 }
 
+.hp {
+  min-height: 100vh;
+  background-color: var(--bg-yellow);
+  padding: 100px 0 70px 0;
+  & .container{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+  }  
+}
 
+.left-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
 
+.hp-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.hp-about {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.right-part {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+
+  & h3 {
+      font-weight: 400;
+      font-size: 62px;
+      color: var(--bg-black);
+      font-family: 'Archangelsk';
+  }
+
+  & p {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 189%;
+      color: var(--bg-black);
+  }
+
+  & div {
+      display: flex;
+      gap: 10px;
+      font-weight: 400;
+      font-size: 18px;
+      color: var(--primary-text-color);
+      margin-bottom: 10px;
+  }
+
+  & button {
+      border: none;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--text-yellow);
+      padding: 20px 50px;
+      background-color: var(--bg-black);
+      cursor: pointer;
+      margin-top: 25px;
+  }
+}
 
 
 

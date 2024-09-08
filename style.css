@@ -230,6 +230,7 @@ body {
 }
 
 .form {
+  padding: 20px 0 70px 0;
   min-height: 100vh;
   background-color: var(--primary-text-color);
   position: relative;
@@ -237,6 +238,8 @@ body {
 .form::before {
   content: "";
   display: block;
+  position: absolute;
+  top: -70px;
   min-height: 70px;
   width: 100%;
   background-image: url(image/form-top.png);
@@ -244,6 +247,8 @@ body {
 .form::after {
   content: "";
   display: block;
+  position: absolute;
+  bottom: -70px;
   min-height: 70px;
   width: 100%;
   background-image: url(image/form-bottom.png);
@@ -252,10 +257,39 @@ body {
   margin-bottom: 25px;
   max-width: 70%;
 }
+@media (max-width: 1080px) {
+  .form__head {
+    width: 50%;
+  }
+}
+@media (max-width: 980px) {
+  .form__head {
+    width: 100%;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    margin-top: 250px;
+  }
+}
 .form__head span {
   display: flex;
   align-items: center;
   gap: 32px;
+}
+@media (max-width: 1080px) {
+  .form__head span img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 62px;
+    height: 62px;
+  }
+}
+@media (max-width: 1080px) {
+  .form__head span {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 .form__head h3 {
   font-family: "Archangelsk";
@@ -284,24 +318,71 @@ body {
   display: flex;
   align-items: center;
 }
+@media (max-width: 1380px) {
+  .form-images {
+    flex-direction: column;
+    gap: 50px;
+    position: absolute;
+    right: 0;
+    top: 10%;
+    max-width: 450px;
+    width: 100%;
+  }
+}
+@media (max-width: 980px) {
+  .form-images {
+    flex-direction: row;
+    justify-content: space-between;
+    left: 0;
+    width: 100%;
+  }
+}
 .form-images img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 450px;
   height: 450px;
 }
+@media (max-width: 1380px) {
+  .form-images img {
+    max-width: 300px;
+    height: auto;
+    width: 100%;
+  }
+}
+@media (max-width: 980px) {
+  .form-images img {
+    max-width: 150px;
+  }
+}
 .form-images img:nth-of-type(1) {
   margin-right: -100px;
   z-index: 1;
 }
+@media (max-width: 1080px) {
+  .form-images img:nth-of-type(1) {
+    margin-right: 0;
+  }
+}
 
 form {
   width: 100%;
-  min-width: 300px;
+  max-width: 450px;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   gap: 35px;
+}
+@media (max-width: 1080px) {
+  form {
+    width: 50%;
+  }
+}
+@media (max-width: 980px) {
+  form {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 form input {
   background-color: inherit;
@@ -416,4 +497,73 @@ label:nth-of-type(2) {
 
 input:checked + .checkbox::after {
   content: "";
+}
+
+.hp {
+  min-height: 100vh;
+  background-color: var(--bg-yellow);
+  padding: 100px 0 70px 0;
+}
+.hp .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.left-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.hp-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.hp-about {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.right-part {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+.right-part h3 {
+  font-weight: 400;
+  font-size: 62px;
+  color: var(--bg-black);
+  font-family: "Archangelsk";
+}
+.right-part p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 189%;
+  color: var(--bg-black);
+}
+.right-part div {
+  display: flex;
+  gap: 10px;
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--primary-text-color);
+  margin-bottom: 10px;
+}
+.right-part button {
+  border: none;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text-yellow);
+  padding: 20px 50px;
+  background-color: var(--bg-black);
+  cursor: pointer;
+  margin-top: 25px;
 }/*# sourceMappingURL=style.css.map */
